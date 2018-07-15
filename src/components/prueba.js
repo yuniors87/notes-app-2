@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledH1 = styled.h1`
-  margin: 1rem;
-  background: ${props => (props.primary ? 'palevioletred' : 'white')};
-  color: ${props => (props.primary ? 'white' : 'palevioletred')};
-`;
-const Wrapper = styled.section`
-  background: ${(props) => props.theme.secondaryColor};
-  height: 100vh;
-  padding: 1rem;
+  margin: 1rem 0;
+  background: ${props => props.theme.background2};
+  color: ${props =>
+    props.primary ? props.theme.primaryColor : props.theme.secondaryColor};
 `;
 
 const Link = ({ className, children }) => (
@@ -17,21 +13,21 @@ const Link = ({ className, children }) => (
 );
 
 const StyledLink = styled(Link)`
-  color: palevioletred;
+  color: ${props => props.theme.primaryColor};
   font-weight: bold;
 `;
 
 class Prueba extends Component {
   render() {
     return (
-      <Wrapper>
-        <StyledH1>Esto es la prueba</StyledH1>
+      <React.Fragment>
         <StyledH1 primary>Esto es la prueba</StyledH1>
+        <StyledH1>Esto es la prueba</StyledH1>
         <br />
         <Link>Unstyled, boring Link</Link>
         <br />
         <StyledLink>Styled, exciting Link</StyledLink>
-      </Wrapper>
+      </React.Fragment>
     );
   }
 }
