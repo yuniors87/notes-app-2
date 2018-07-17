@@ -8,3 +8,7 @@ export const colors = {
   defaultColor: '#24414F',
   defaulBackgroundtColor: '#d6d4d2'
 };
+
+export const measures = {
+  radius: '10px'
+}

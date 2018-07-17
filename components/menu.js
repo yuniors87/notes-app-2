@@ -9,6 +9,9 @@ export default props => (
     <Link href="/about">
       <a>About</a>
     </Link>
+    <Link href="/notes">
+      <a>Notes</a>
+    </Link>
     <style jsx>{`
       nav {
         background: ${colors.headerBackground};
