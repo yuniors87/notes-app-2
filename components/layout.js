@@ -11,7 +11,7 @@ export default props => (
         min-height: 100vh;
       }
       .wrapper {
-        padding: 1rem;
+        padding: 0 1rem;
       }
     `}</style>
     <style jsx global>{`
