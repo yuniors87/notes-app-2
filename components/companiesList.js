@@ -4,8 +4,8 @@ import { colors, measures } from './theme';
 class CompaniesList extends React.Component {
   render() {
     return (
-      <>
-        <div className="list">
+      <React.Fragment>
+        <React.Fragment className="list">
           <ul>
             <li key="1">Company 001</li>
             <li key="2">Company 002</li>
@@ -19,12 +19,11 @@ class CompaniesList extends React.Component {
             <li key="10">Company 010</li>
             <li key="11">Company 011</li>
           </ul>
-        </div>
+        </React.Fragment>
         <style jsx>{`
           .list {
-            width: 15rem;
             background-color: ${colors.background2};
-            height: 80vh;
+            height: 100%;
             border-top-left-radius: ${measures.radius};
             border-bottom-left-radius: ${measures.radius};
           }
@@ -41,8 +40,16 @@ class CompaniesList extends React.Component {
             background-color: ${colors.background2};
             padding: 10px 15px 10px 25px;
             cursor: pointer;
-            border-bottom: 2px solid ${colors.primaryColor};
+            border-bottom: 1px solid ${colors.primaryColor};
           }
+
+          li:hover {
+            background: ${colors.secondaryColor};
+          }
+
+          li:active {
+            background: ${colors.primaryColor};
+        }
 
           ul li:first-child {
             border-top-left-radius: ${measures.radius};
@@ -52,7 +59,7 @@ class CompaniesList extends React.Component {
             // border-bottom-left-radius: ${measures.radius};
           }
         `}</style>
-      </>
+      </React.Fragment>
     );
   }
 }
