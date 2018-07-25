@@ -1,27 +1,35 @@
 {
   "name": "note-app-2",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yuniors87/notes-app-2.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "@yuniors87",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yuniors87/notes-app-2/issues"
   },
   "homepage": "https://github.com/yuniors87/notes-app-2#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
   "dependencies": {
-    "next": "^6.1.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "styled-components": "^3.3.3"
   }
 }
