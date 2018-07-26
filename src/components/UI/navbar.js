@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const StyledNavBar = styled.div`
   background: ${props => props.theme.navbarBackround};
@@ -8,7 +9,6 @@ const StyledNavBar = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  color: ${props => props.theme.navbarColor};
   grid-column: 1;
   grid-row: 1 / 2;
   @media screen and (max-width: 640px) {
@@ -42,30 +42,38 @@ const StyledList = styled.ul`
   }
 `;
 const StyledListItem = styled.li`
-  margin: 0 0.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-bottom: solid 2px ${props => props.theme.navbarBackround};
-  &:hover {
-    border-bottom: solid 2px ${props => props.theme.navbarColor};
-    border-radius: 2px;
-    background: ${props => props.theme.navbarHover};
-  }
   @media screen and (max-width: 640px) {
-    display: block;
+    display: flex;
     border-top: 1px ${props => props.theme.navbarColor} solid;
     background: ${props => props.theme.navbarBackround};
-    margin: 0;
-    padding: 0.5rem 0.9rem;
+    height: 2.2rem;
+  }
+`;
+
+const StyledLink = styled(NavLink)`
+  :hover {
+    border-bottom: solid 2px ${props => props.theme.navbarColor};
+  }
+  color: ${props => props.theme.navbarColor};
+  text-decoration: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: solid 2px ${props => props.theme.navbarBackround};
+  @media screen and (max-width: 640px) {
+    border-bottom: none;
+    width: 100%;
+    &:hover {
+      border-bottom: 0;
+    }
   }
 `;
 
 const Trigger = styled.div`
+  color: ${props => props.theme.navbarColor};
   display: none;
   cursor: pointer;
   @media screen and (max-width: 640px) {
     display: block;
-    padding: 1rem;
   }
 `;
 
@@ -83,12 +91,20 @@ class Navbar extends Component {
   render() {
     return (
       <StyledNavBar>
-        <StyledTitle>Notes-App</StyledTitle>
+        <StyledTitle>
+          <StyledLink to="/">Notes-App</StyledLink>
+        </StyledTitle>
         <Trigger onClick={this.handleClick}>Menu</Trigger>
         <StyledList display={this.state.mostrarMenu ? '1' : '0'}>
-          <StyledListItem>Menu 001</StyledListItem>
-          <StyledListItem>Menu largo 002</StyledListItem>
-          <StyledListItem>Menu 003</StyledListItem>
+          <StyledListItem>
+            <StyledLink to="/notes">Notes</StyledLink>
+          </StyledListItem>
+          <StyledListItem>
+            <StyledLink to="/systems">Systems</StyledLink>
+          </StyledListItem>
+          <StyledListItem>
+            <StyledLink to="/companies">Companies</StyledLink>
+          </StyledListItem>
         </StyledList>
       </StyledNavBar>
     );
