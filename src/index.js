@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './components/Main';
+import App from './components/App';
 
 const Index = () => {
-  return <Main />;
+  return (
+      <App />
+  );
 };
 
 ReactDOM.render(<Index />, document.getElementById('index'));

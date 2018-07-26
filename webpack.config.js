@@ -7,7 +7,8 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   devServer: {
-    host: '192.168.1.7'
+    host: '192.168.1.7',
+    historyApiFallback: true
   },
   module: {
     rules: [
