@@ -72,6 +72,7 @@ const Trigger = styled.div`
   color: ${props => props.theme.navbarColor};
   display: none;
   cursor: pointer;
+  padding: 1rem;
   @media screen and (max-width: 640px) {
     display: block;
   }
@@ -96,13 +97,13 @@ class Navbar extends Component {
         </StyledTitle>
         <Trigger onClick={this.handleClick}>Menu</Trigger>
         <StyledList display={this.state.mostrarMenu ? '1' : '0'}>
-          <StyledListItem>
+          <StyledListItem onClick={this.handleClick}>
             <StyledLink to="/notes">Notes</StyledLink>
           </StyledListItem>
-          <StyledListItem>
+          <StyledListItem onClick={this.handleClick}>
             <StyledLink to="/systems">Systems</StyledLink>
           </StyledListItem>
-          <StyledListItem>
+          <StyledListItem onClick={this.handleClick}>
             <StyledLink to="/companies">Companies</StyledLink>
           </StyledListItem>
         </StyledList>
